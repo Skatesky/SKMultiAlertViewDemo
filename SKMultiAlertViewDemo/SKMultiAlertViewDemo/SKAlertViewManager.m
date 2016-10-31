@@ -27,6 +27,13 @@
 - (void)pushAlertView:(UIView *)alertView atIndex:(NSInteger)index{
     alertView.sk_alertIndex = index;
     alertView.hidden    = YES;
+    //先隐藏顶部视图
+    NSInteger showIndex = [self topViewIndex];
+    if (showIndex >= 0) {
+        UIView *showView    = self.alertViews[showIndex];
+        showView.hidden     = YES;
+    }
+    //寻找合适的地方插入新的视图
     if (!_alertViews || index < 0) {
         [self.alertViews addObject:alertView];
     } else {
@@ -46,6 +53,7 @@
 }
 
 - (void)refresh{
+    //显示顶部视图，可去掉动画
     NSInteger showIndex = [self topViewIndex];
     UIView *showView    = self.alertViews[showIndex];
     
