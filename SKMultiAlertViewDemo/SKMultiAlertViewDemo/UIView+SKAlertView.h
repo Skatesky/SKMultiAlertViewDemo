@@ -29,6 +29,12 @@
 #pragma mark - solution 2
 - (void)sk_pushAlertView:(UIView *)view atAlertIndex:(NSInteger)alertIndex;
 
+- (void)sk_popAlertView:(UIView *)view;
+
 - (void)sk_refreshAlertViews;
+
+#pragma mark - soulution 3
+// 通过单例的形式进行弹框的管理，而不是属性，这样便能跨父视图进行不同父视图上的弹框管理
+
 
 @end

@@ -49,7 +49,10 @@
 }
 
 - (void)popAlertView:(UIView *)alertView{
-    
+    [self.alertViews removeObject:alertView];
+    NSInteger showIndex = [self topViewIndex];
+    UIView *showView    = self.alertViews[showIndex];
+    showView.hidden     = NO;
 }
 
 - (void)refresh{

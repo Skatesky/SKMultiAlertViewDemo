@@ -66,6 +66,12 @@
     [self.sk_alertManager pushAlertView:view atIndex:alertIndex];
 }
 
+- (void)sk_popAlertView:(UIView *)view{
+    if (self.sk_alertManager) {
+        [self.sk_alertManager popAlertView:view];
+    }
+}
+
 - (void)sk_refreshAlertViews{
     if (self.sk_alertManager) {
         [self.sk_alertManager refresh];
